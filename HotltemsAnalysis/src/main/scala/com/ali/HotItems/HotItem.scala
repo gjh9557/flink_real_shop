@@ -122,7 +122,7 @@ class WindowResultFunction extends WindowFunction[Long,ItemViewCount,Tuple,TimeW
   }
 }
 
-//输入样例类
+//输入样例类.
 case class UserBehavior(userid:Long,itemId: Long,categoryId: Int,behavior:String,timestamp:Long)
 //输出样例类
 case class ItemViewCount(Itemid:Long,windowEnd:Long,count:Long)
