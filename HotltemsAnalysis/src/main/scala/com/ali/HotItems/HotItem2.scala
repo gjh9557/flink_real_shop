@@ -21,6 +21,10 @@ import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer
 import org.apache.flink.util.Collector
 
 import scala.collection.mutable.ListBuffer
+
+/**
+  * 在1的基础上将数据存到kafka,在从kafka那个主题来读取数据。
+  */
 object HotItem2 {
   def main(args: Array[String]): Unit = {
     val properties=new Properties()
@@ -61,7 +65,7 @@ object HotItem2 {
 
   }
 }
-//自定义实现process function
+//自定义实现process function,这里的string是为了输出
 class TopNHotItems(i: Int) extends KeyedProcessFunction[Tuple,ItemViewCount,String]{
   //定义状态ListState
   private var itemState:ListState[ItemViewCount] = _
