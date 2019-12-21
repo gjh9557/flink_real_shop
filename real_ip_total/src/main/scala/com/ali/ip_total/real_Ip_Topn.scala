@@ -94,7 +94,7 @@ class TopNHotUrls(i: Int) extends KeyedProcessFunction[Long,UrlCount,String] {
     val result:StringBuilder=new StringBuilder
 
     result.append("==============================")
-    //错开多长时间
+    //错开多长时间啊
     result.append("时间：").append(new Timestamp(timestamp-10000)).append("\n")
     for(i<-sortedUrlviews.indices){
       val current:UrlCount=sortedUrlviews(i)
